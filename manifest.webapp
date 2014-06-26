@@ -21,7 +21,7 @@
   },
   "default_locale": "en-US",
   "icons": {
-    "60": "/Images/Browser.png",
-    "128": "/Images/Browser.png"
+    "60": "/FxOS-Dashboard/Images/Browser.png",
+    "128": "/FxOS-Dashboard/Images/Browser.png"
   }
 }
