@@ -2,7 +2,7 @@
   "version": "1.3",
   "name": "FxOS Dashboard",
   "description": "Track the bug status for Firefox OS.",
-  "launch_path": "/Mozilla/dashboard_mobile/index.html",
+  "launch_path": "/FxOS-Dashboard/index.html",
   "developer": {
     "name": "Kevin Hu, Senior Manager, Engineering Project Management, Mozilla",
     "url": "http://www.linkedin.com/in/kaichih/"
