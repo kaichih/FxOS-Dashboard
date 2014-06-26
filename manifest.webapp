@@ -1,0 +1,27 @@
+{
+  "version": "1.3",
+  "name": "FxOS Dashboard",
+  "description": "Track the bug status for Firefox OS.",
+  "launch_path": "/Mozilla/dashboard_mobile/index.html",
+  "developer": {
+    "name": "Kevin Hu, Senior Manager, Engineering Project Management, Mozilla",
+    "url": "http://www.linkedin.com/in/kaichih/"
+  },
+  "installs_allowed_from": ["*"],
+  "orientation": "portrait-primary",
+  "locales": {
+    "en-US": {
+      "name": "FxOS Dashboard",
+      "description": "Firefox OS."
+    },
+    "zh-TW": {
+      "name": "FxOS Dashboard",
+      "description": "Firefox OS."
+    }
+  },
+  "default_locale": "en-US",
+  "icons": {
+    "60": "/Images/Browser.png",
+    "128": "/Images/Browser.png"
+  }
+}

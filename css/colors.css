@@ -1,0 +1,22 @@
+/* -*- Mode: Java; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
+/* vim: set shiftwidth=2 tabstop=2 autoindent cindent expandtab: */
+
+/* Colors for tiles */
+.color0 {
+  background-color: rgb(70, 23, 180);
+}
+.color1 {
+  background-color: rgb(0, 193, 63);
+}
+.color2 {
+  background-color: rgb(254, 123, 34);
+}
+.color3 {
+  background-color: rgb(176, 30, 0);
+}
+.color4 {
+  background-color: rgb(0, 106, 193);
+}
+.color5 {
+  background-color: rgb(225, 183, 0);
+}

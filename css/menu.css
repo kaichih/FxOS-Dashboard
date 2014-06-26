@@ -1,0 +1,20 @@
+/* -*- Mode: Java; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
+/* vim: set shiftwidth=2 tabstop=2 autoindent cindent expandtab: */
+
+div#menu {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  cursor: pointer;
+}
+div.checkbox {
+  display: inline-block;
+  padding: 10px 10px 10px 10px;
+  background-color: rgb(231, 76, 60);
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+div.checkbox.checked {
+  background-color: #2ecc71;
+}

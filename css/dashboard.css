@@ -1,0 +1,68 @@
+/* -*- Mode: Java; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
+/* vim: set shiftwidth=2 tabstop=2 autoindent cindent expandtab: */
+
+ul {
+  list-style: none;
+  font-weight: bold;
+  padding: 10px 10px 10px 10px;
+  margin: 0;
+  display: inline-block;
+}
+body > ul {
+  padding: 0;
+  width: 100%;
+}
+body > ul > li > div {
+  padding: 10px 10px 10px 10px;
+}
+div#title {
+  font-size: 200%;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+ul#status > li {
+  display: inline-block;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  font-weight: normal;
+}
+ul#components > li {
+  display: inline-block;
+  padding: 10px 10px 20px 10px;
+  text-align: center;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a.count {
+  font-size: 200%;
+  font-weight: bold;
+}
+a.count.unassigned {
+  font-size: 100%;
+  font-weight: normal;
+}
+.componentowner {
+  font-size: 75%;
+  font-style: italic;
+}
+
+/* Colors for categories */
+#fxos {
+  background-color: rgb(255, 80, 0);
+}
+#noms {
+  background-color: rgb(86, 197, 255);
+}
+#triage {
+  background-color: rgb(0, 130, 135);
+}
+#blockers {
+  background-color: rgb(0, 216, 204);
+}
+#feature {
+  background-color: rgb(0, 200, 150);
+}
