@@ -225,6 +225,8 @@ function refresh() {
                                   formatCounts(null, config.feature_value, null, data.features) +
                                   "</div>").append(formatStatus(data.features));
 
+  $("li#updatetime").empty().append(new Date());
+
 //alert(dump(data.blocking));
 }
 
