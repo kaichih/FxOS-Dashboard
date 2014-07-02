@@ -151,7 +151,8 @@ function refresh() {
     var html = "<a";
     if (className)
       html += " class='" + className + "'";
-    html += " " + getLink(release, component, assigned_to);
+    //remove the link before we provide a good way to allow users to go back to the previous page. 
+//    html += " " + getLink(release, component, assigned_to);
     html += ">";
     html += count;
     html += "</a>";
