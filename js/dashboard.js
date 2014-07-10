@@ -7,7 +7,7 @@ var config = {
   releases: ["1.3", "1.3T", "1.4", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5"], // which releases to show
   flag: "cf_blocking_b2g", // name of the release flag to use
   feature_flag: "cf_feature_b2g", 
-  reload: 60, // reload every this many seconds (0 means disabled)
+  reload: 300, // reload every this many seconds (0 means disabled)
   maxAge: 7, // maximum age in days (deep red when showing activity)
   filtercomponents: null, // don't filter any specific components
   filterowners: null, // don't filter any specific owners
