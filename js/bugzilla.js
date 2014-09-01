@@ -95,7 +95,7 @@ Filter.prototype = {
   },
   // filter all closed bugs
   closed: function () {
-    this.status = ["RESOLVED"];
+    this.status = ["RESOLVED","VERIFIED"];
     return this;
   },
   // filter all bugs that block a specific B2G version
