@@ -4,7 +4,7 @@
   "description": "Track the bug status for Firefox OS.",
   "launch_path": "/FxOS-Dashboard/index.html",
   "developer": {
-    "name": "Kevin Hu, Senior Manager, Engineering Project Management, Mozilla",
+    "name": "Kevin Hu, Director, Engineering Project Management and Release Management, Firefox OS, Mozilla",
     "url": "http://www.linkedin.com/in/kaichih/"
   },
   "installs_allowed_from": ["*"],

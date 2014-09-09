@@ -4,7 +4,7 @@
 "use strict";
 
 var config = {
-  releases: ["1.3", "1.3T", "1.4", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5"], // which releases to show
+  releases: ["1.3", "1.3T", "1.4", "2.0", "2.0M", "2.1", "2.2", "2.3", "2.4", "2.5"], // which releases to show
   featureReleases: ["2.1", "2.2?", "2.2+", "2.3?", "2.3+"], // for feature-b2g transition. 
   flag: "cf_blocking_b2g", // name of the release flag to use
   feature_flag: "cf_feature_b2g", 
