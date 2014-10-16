@@ -112,7 +112,7 @@ function refresh() {
   }
 
   // Create a search query link for bugzilla we can redirect to.
-  function getLink(release, component, assigned_to) {
+  function getLink(flag, release, component, assigned_to) {
     var url = "https://bugzilla.mozilla.org/buglist.cgi?";
     var args = [];
 
@@ -129,10 +129,7 @@ function refresh() {
     push("bug_status", ["UNCONFIRMED", "NEW", "ASSIGNED", "REOPENED"]);
     if (release)
     {
-      if (release.indexOf("?") > -1 || release.indexOf("+") > -1)
-        push(config.flag, release);
-      else
-        push(config.feature_flag, release);
+      push(flag, release);
     }
     if (component)
       push("component", component);
@@ -148,25 +145,25 @@ function refresh() {
     return "(" + s + ")";
   }
 
-  function formatCount(className, release, component, assigned_to, count) {
+  function formatCount(flag, className, release, component, assigned_to, count) {
     var html = "<a";
     if (className)
       html += " class='" + className + "'";
 
-    html += " " + getLink(release, component, assigned_to);
+    html += " " + getLink(flag, release, component, assigned_to);
     html += " target='dashboard'>";
     html += count;
     html += "</a>";
     return html;
   }
-  function formatCounts(className, release, component, count) {
-    var html = formatCount(className, release, component, null, accumulate(count));
+  function formatCounts(flag, className, release, component, count) {
+    var html = formatCount(flag, className, release, component, null, accumulate(count));
     var unassigned = accumulate(count, "nobody@mozilla.org");
     if (unassigned > 0)
-      html += " " + formatCount(className + " unassigned", release, component, "nobody@mozilla.org", brace(unassigned));
+      html += " " + formatCount(flag, className + " unassigned", release, component, "nobody@mozilla.org", brace(unassigned));
     return html;
   }
-  function formatStatus(counts, component) {
+  function formatStatus(flag, counts, component) {
     var html = "<ul id='status'>";
     var showActivity = $("div#toggleActivity").hasClass("checked");
     eachAlphabetically(counts, function (release, count) {
@@ -187,13 +184,13 @@ function refresh() {
       }
       html += "<li " + color + ">";
       html += "<div class='release'>" + release + "</div>";
-      html += formatCounts("count", release, component, count);
+      html += formatCounts(flag, "count", release, component, count); //detailed counts for each version
       html += "</li>";
     });
     html += "</ul>";
     return html;
   }
-  function formatComponents(components) {
+  function formatComponents(flag, components) {
     var html = "<ul id='components'>";
     var showOwners = $("div#toggleOwners").hasClass("checked");
     
@@ -203,7 +200,7 @@ function refresh() {
                   : component;
       html += "<li>";
       html += "<div class='component'>" + label + "</div>";
-      html += formatStatus(counts, component);
+      html += formatStatus(flag, counts, component);
       html += "</li>";
     });
     
@@ -212,20 +209,20 @@ function refresh() {
   }
 
   $("li#noms").empty().append("<div>Nominations: " +
-                              formatCounts(null, config.nomination_value, null, data.nominations) +
-                              "</div>").append(formatStatus(data.nominations));
+                              formatCounts("cf_blocking_b2g", null, config.nomination_value, null, data.nominations) +
+                              "</div>").append(formatStatus("cf_blocking_b2g", data.nominations));
   if (data.untriaged) {
     $("li#triage").empty().append("<div>Triage: " +
-                                  formatCounts(null, config.blocking_value, "General", data.untriaged) +
-                                  "</div>").append(formatStatus(data.untriaged, "General"));
+                                  formatCounts("cf_blocking_b2g", null, config.blocking_value, "General", data.untriaged) +
+                                  "</div>").append(formatStatus("cf_blocking_b2g", data.untriaged, "General"));
   }
   $("li#blockers").empty().append("<div>Blockers: " +
-                                  formatCounts(null, config.blocking_value, null, data.blocking) +
-                                  "</div>").append(formatStatus(data.blockers));
+                                  formatCounts("cf_blocking_b2g", null, config.blocking_value, null, data.blocking) +
+                                  "</div>").append(formatStatus("cf_blocking_b2g", data.blockers));
   
   $("li#feature").empty().append("<div>Features: " + 
-                                  formatCounts(null, config.feature_value, null, data.features) +
-                                  "</div>").append(formatStatus(data.features));
+                                  formatCounts("cf_feature_b2g", null, config.feature_value, null, data.features) +
+                                  "</div>").append(formatStatus("cf_feature_b2g", data.features));
 
   $("li#updatetime").empty().append(new Date());
 
