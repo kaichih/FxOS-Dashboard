@@ -4,8 +4,8 @@
 "use strict";
 
 var config = {
-  releases: ["1.3", "1.3T", "1.4", "2.0", "2.0M", "2.1", "2.2", "2.3", "2.4", "2.5"], // which releases to show
-  featureReleases: ["2.1", "2.2?", "2.2+", "2.3?", "2.3+"], // for feature-b2g transition. 
+  releases: ["1.3", "1.3T", "1.4", "2.0", "2.0M", "2.1", "2.1S", "2.2", "2.3", "2.4", "2.5"], // which releases to show
+  featureReleases: ["2.2?", "2.2+", "2.3?", "2.3+", "3.0?", "3.0+"], // for feature-b2g transition. 
   flag: "cf_blocking_b2g", // name of the release flag to use
   feature_flag: "cf_feature_b2g", 
   reload: 300, // reload every this many seconds (0 means disabled)
@@ -62,7 +62,8 @@ var data = {
   untriaged: [],
   blocking: [], 
   blockers: [],
-  features: []
+  features: [],
+  regression: []
 };
 
 // Initially hide the body and fade it in when we get some data to show.
@@ -223,6 +224,10 @@ function refresh() {
   $("li#feature").empty().append("<div>Features: " + 
                                   formatCounts("cf_feature_b2g", null, config.feature_value, null, data.features) +
                                   "</div>").append(formatStatus("cf_feature_b2g", data.features));
+
+  $("li#regression").empty().append("<div>Regression Blockers: " + 
+                                  formatCounts("cf_blocking_b2g", null, config.tracking_value, null, data.regression) +
+                                  "</div>").append(formatStatus("cf_blocking_b2g", data.regression));
 
   $("li#updatetime").empty().append(new Date());
 
