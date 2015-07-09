@@ -62,8 +62,7 @@ var data = {
   untriaged: [],
   blocking: [], 
   blockers: [],
-  features: [],
-  regression: []
+  features: []
 };
 
 // Initially hide the body and fade it in when we get some data to show.
@@ -224,10 +223,6 @@ function refresh() {
   $("li#feature").empty().append("<div>Features: " + 
                                   formatCounts("cf_feature_b2g", null, config.feature_value, null, data.features) +
                                   "</div>").append(formatStatus("cf_feature_b2g", data.features));
-
-  $("li#regression").empty().append("<div>Regression Blockers: " + 
-                                  formatCounts("cf_blocking_b2g", null, config.tracking_value, null, data.regression) +
-                                  "</div>").append(formatStatus("cf_blocking_b2g", data.regression));
 
   $("li#updatetime").empty().append(new Date());
 
